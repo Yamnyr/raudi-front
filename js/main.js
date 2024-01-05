@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(models => {
             models.forEach(modele => {
                 const li = document.createElement('li');
-                li.textContent = `Nom: ${modele.nom}, Prix: ${modele.prix}, Nb de portes: ${modele.nbr_porte}, Moteur: ${modele.moteur}, Taille: ${modele.taille}`;
+                li.textContent = `Nom: ${modele.nom}, Prix: ${modele.prix}`;
 
                 // Ajoute un bouton
                 const button = document.createElement('button');
