@@ -4,7 +4,9 @@
     font-family: sans-serif;
     font-weight: bold;
 }
-
+body{
+    background-color: #f4f4f4;
+}
 
 header {
     background-color: #35424a;
@@ -13,8 +15,9 @@ header {
     color: #ffffff;
 }
 
-header h1 {
+h1 {
     margin: 0;
+    text-align: center;
 }
 
 nav ul {
@@ -128,31 +131,23 @@ button:hover {
 
 
 
-/* Ajoute ces styles pour le positionnement des éléments */
 .details-container {
     display: flex;
-    /*align-items: center;*/
 }
 
 .model-info {
-    margin-left: 20px; /* Ajuste la marge entre l'image et les détails */
+    margin-left: 20px;
 }
 
 
 .option-box {
-    border: 1px solid #ddd; /* Ajoute une bordure aux cases d'options */
-    padding: 10px; /* Ajoute un espacement interne aux cases d'options */
-    margin-bottom: 10px; /* Ajoute un espacement entre les cases d'options */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-/* Ajoute ces styles pour le formulaire de configuration */
 #configureForm {
-    margin-top: 20px; /* Ajuste la marge au-dessus du formulaire */
-    /*text-align: center; !* Centre le contenu du formulaire *!*/
+    margin-top: 20px;
 }
 
 #configureForm label {
@@ -163,7 +158,6 @@ button:hover {
 #configureForm input[type="text"] {
     width: 100%;
     font-size: 20px;
-    /*margin-bottom: 20px; !* Ajoute un espacement en bas de chaque champ de texte *!*/
 }
 
 #configureForm input[type="submit"] {
@@ -181,20 +175,6 @@ button:hover {
     background-color: #35424a; /* Couleur de fond du bouton au survol */
 }
 
-
-
-
-/* style.css */
-
-body {
-    background-color: #f4f4f4;
-}
-
-h1 {
-    text-align: center;
-    /*color: #333;*/
-}
-
 #loginForm, #registerForm {
     max-width: 400px;
     margin: 20px auto;
@@ -205,11 +185,10 @@ h1 {
 }
 
 label {
-    display: block;
     margin-bottom: 8px;
 }
 
-input {
+input[type="text"],input[type="number"], input[type="email"],input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
