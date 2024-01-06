@@ -1,6 +1,6 @@
 // addModel.js
 
-import {getAllOptions, addModel, getModelImageById} from './api.js';
+import { getAllOptions, addModel } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const optionsList = document.getElementById('optionsList');
@@ -8,15 +8,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Appelle la fonction pour récupérer toutes les options depuis l'API
     const options = await getAllOptions();
-
-    const imgSrc = await getModelImageById(modele.id);
-
-    // Ajoute l'image du modèle
-    const img = document.createElement('img');
-    img.src = imgSrc; // L'URL de l'image
-    img.alt = modele.nom; // Alt de l'image (nom du modèle)
-
-
 
     // Ajoute les options à la liste de cases à cocher
     options.forEach(option => {
