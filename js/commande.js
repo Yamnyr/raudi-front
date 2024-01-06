@@ -43,10 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 commandListElement.appendChild(li);
             }
 
-            const totalLi = document.createElement('li');
-            totalLi.textContent = `Montant Total: ${totalMontantTotal} €`;
-            commandListElement.appendChild(totalLi);
-
+            // const totalLi = document.createElement('li');
+            // totalLi.textContent = `Montant Total: ${totalMontantTotal} €`;
+            // commandListElement.appendChild(totalLi);
             displayMonthTotalTable(monthTotalTable);
         });
 });
@@ -84,6 +83,25 @@ function displayMonthTotalTable(monthTotalTable) {
         tbody.appendChild(row);
     }
 
+    // Ajoute une nouvelle ligne pour afficher le montant total global
+    const totalRow = document.createElement('tr');
+    const totalLabelCell = document.createElement('td');
+    totalLabelCell.textContent = 'Montant Total Global';
+    const totalAmountCell = document.createElement('td');
+    totalAmountCell.textContent = `${calculateGlobalTotal(monthTotalTable)} €`;
+    totalRow.appendChild(totalLabelCell);
+    totalRow.appendChild(totalAmountCell);
+    tbody.appendChild(totalRow);
+
     table.appendChild(tbody);
     tableContainer.appendChild(table);
+}
+
+// Ajoute une fonction pour calculer le montant total global
+function calculateGlobalTotal(monthTotalTable) {
+    let globalTotal = 0;
+    for (const monthYear in monthTotalTable) {
+        globalTotal += monthTotalTable[monthYear];
+    }
+    return globalTotal;
 }
