@@ -1,0 +1,36 @@
+<!-- configure.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurer le Modèle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<div id="headerContainer"></div>
+<body>
+<h1>Configurer le Modèle</h1>
+
+<div id="modelDetails">
+    <!-- Les détails du modèle seront ajoutés ici dynamiquement -->
+    <div id="optionsList">
+        <!-- La liste des options sera ajoutée ici dynamiquement -->
+    </div>
+    <form id="configureForm">
+        <label for="montantTotal">Montant Total:</label>
+        <input type="text" id="montantTotal" name="montantTotal" readonly>
+
+        <input type="submit" value="Valider la Commande">
+    </form>
+</div>
+
+
+
+
+
+
+<script src="js/configure.js" type="module"></script>
+<script src="js/includeHeader.js" type="module"></script>
+</body>
+</html>

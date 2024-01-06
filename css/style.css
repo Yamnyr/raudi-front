@@ -1,0 +1,185 @@
+/* Ajoute ces styles à ton fichier CSS ou dans une balise <style> dans le HTML */
+
+*{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+header {
+    background-color: #35424a;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+/* Style pour la liste de modèles */
+#modelList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 0;
+}
+
+/* Style pour chaque carte modèle */
+.model-list li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Style pour l'image du modèle */
+img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style pour les informations du modèle */
+div {
+    color: #35424a;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style pour les boutons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #35424a;
+}
+/* Ajoute ces styles au fichier style.css */
+
+/* ... Autres styles ... */
+
+#modelDetails {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.details-container img {
+    width: 50%; /* La moitié de la largeur pour l'image */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+}
+
+.details-info {
+    width: 50%; /* La moitié de la largeur pour les informations */
+    padding-left: 20px; /* Espacement pour séparer de l'image */
+}
+
+.options-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 0;
+}
+
+.options-list li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
+/* Ajoute ces styles pour le positionnement des éléments */
+.details-container {
+    display: flex;
+    /*align-items: center;*/
+}
+
+.model-info {
+    margin-left: 20px; /* Ajuste la marge entre l'image et les détails */
+}
+
+
+.option-box {
+    border: 1px solid #ddd; /* Ajoute une bordure aux cases d'options */
+    padding: 10px; /* Ajoute un espacement interne aux cases d'options */
+    margin-bottom: 10px; /* Ajoute un espacement entre les cases d'options */
+}
+
+
+
+
+
+/* Ajoute ces styles pour le formulaire de configuration */
+#configureForm {
+    margin-top: 20px; /* Ajuste la marge au-dessus du formulaire */
+    /*text-align: center; !* Centre le contenu du formulaire *!*/
+}
+
+#configureForm label {
+    display: block;
+    margin-bottom: 10px; /* Ajoute un espacement en bas de chaque étiquette */
+}
+
+#configureForm input[type="text"] {
+    width: 100%;
+    font-size: 20px;
+    /*margin-bottom: 20px; !* Ajoute un espacement en bas de chaque champ de texte *!*/
+}
+
+#configureForm input[type="submit"] {
+    background-color: #35424a; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+#configureForm input[type="submit"]:hover {
+    background-color: #35424a; /* Couleur de fond du bouton au survol */
+}
