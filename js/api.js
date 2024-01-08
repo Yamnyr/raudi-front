@@ -82,7 +82,7 @@ function loginUser(data) {
             console.log('Token stored successfully:', token);
 
             // Rediriger l'utilisateur après la connexion
-            window.location.href = "/raudifront/";
+            window.location.href = "./";
         })
         .catch(error => {
             console.error('Error:', error);
