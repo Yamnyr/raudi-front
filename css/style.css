@@ -53,7 +53,7 @@ nav ul li a {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 250px;
+    width: 300px;
     margin-bottom: 20px;
 }
 
@@ -217,8 +217,16 @@ input[type="text"],input[type="number"], input[type="email"],input[type="passwor
     border-radius: 5px;
 }
 
+#optionsList div{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 3px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 #monthTotalTable {
-    max-width: 600px;
+    width: 50%;
     margin: 20px auto;
 }
 

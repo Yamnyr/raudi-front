@@ -48,7 +48,6 @@ function getOptionsByModelId(modelId) {
 }
 
 function getAllCommands() {
-    console.log(token)
     return fetch('http://localhost:8000/commande/getall',{
         method: 'GET',
         headers: {
@@ -156,6 +155,7 @@ export async function addModel(modelData) {
     });
 
     if (response.ok) {
+        alert('Modèle ajouté avec succes');
         console.log('Modèle ajouté avec succès !');
         window.location.href = `index.html`;
     } else {
@@ -180,6 +180,14 @@ function getModelImageById(modelId) {
             console.error('Erreur:', error);
         });
 }
+// export async function getAllOptions() {
+//     const response = await fetch('http://localhost:8000/option/getall');
+//     if (response.ok) {
+//         return response.json();
+//     } else {
+//         throw new Error('Erreur lors de la récupération des options');
+//     }
+// }
 
 export async function addOption(optionData) {
     const response = await fetch('http://localhost:8000/option/add', {
@@ -196,7 +204,9 @@ export async function addOption(optionData) {
         alert('Option ajouté avec succès');
         window.location.href = `index.html`;
     } else {
-        throw new Error('Erreur lors de l\'ajout de l\'option');
+        alert('Vous devez être connecté en tant qu\'admin pour ajouter un modèle');
+        window.location.href = 'index.html';
+        throw new Error('Erreur lors de l\'ajout du modèle');
     }
 }
 

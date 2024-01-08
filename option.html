@@ -12,7 +12,7 @@
 <body>
 <h1>Ajouter une Option</h1>
 
-<form id="addOptionForm">
+<form style="width: 50%; margin-left: 25%" id="addOptionForm">
     <label for="nom">Nom:</label>
     <input type="text" id="nom" name="nom" required>
 
@@ -20,7 +20,14 @@
     <input type="number" id="prix" name="prix" required>
 
     <button type="submit">Ajouter Option</button>
+
+    <h2>Liste des options :</h2>
+    <div id="optionsList">
+        <!-- La liste des options sera ajoutée ici dynamiquement -->
+    </div>
 </form>
+
+
 
 <script src="js/option.js" type="module"></script>
 <script src="js/includeHeader.js" type="module"></script>
