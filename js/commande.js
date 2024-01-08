@@ -11,43 +11,56 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalMontantTotal = 0;
 
     // Appelle la fonction pour récupérer toutes les commandes depuis l'API
-    getAllCommands()
-        .then(async commands => {
-            for (const command of commands) {
-                const li = document.createElement('li');
-                const formattedDate = formatDate(new Date(command.createdAt));
-                const monthKey = formattedDate.split(' ')[1]; // Récupère le nom du mois
-                const yearKey = formattedDate.split(' ')[2]; // Récupère l'année
+    try {
+        getAllCommands()
+            .then(async commands => {
+                for (const command of commands) {
+                    const li = document.createElement('li');
+                    const formattedDate = formatDate(new Date(command.createdAt));
+                    const monthKey = formattedDate.split(' ')[1]; // Récupère le nom du mois
+                    const yearKey = formattedDate.split(' ')[2]; // Récupère l'année
 
-                // Fetch user details based on id_utilisateur
-                const userResponse = await fetch(`http://localhost:8000/utilisateur/getone/${command.id_utilisateur}`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': token,
-                    },
-                });
+                    // Fetch user details based on id_utilisateur
+                    const userResponse = await fetch(`http://localhost:8000/utilisateur/getone/${command.id_utilisateur}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': token,
+                        },
+                    });
 
-                const userData = await userResponse.json();
+                    const userData = await userResponse.json();
 
-                li.textContent = `Commande ID: ${command.id}, Date: ${formattedDate}, Montant: ${command.montant_total} €, Utilisateur: ${userData.nom} ${userData.prenom}`;
+                    li.textContent = `Commande ID: ${command.id}, Date: ${formattedDate}, Montant: ${command.montant_total} €, Utilisateur: ${userData.nom} ${userData.prenom}`;
 
-                totalMontantTotal += command.montant_total;
+                    totalMontantTotal += command.montant_total;
 
-                const monthYearKey = `${monthKey} ${yearKey}`;
-                if (monthTotalTable[monthYearKey]) {
-                    monthTotalTable[monthYearKey] += command.montant_total;
-                } else {
-                    monthTotalTable[monthYearKey] = command.montant_total;
+                    const monthYearKey = `${monthKey} ${yearKey}`;
+                    if (monthTotalTable[monthYearKey]) {
+                        monthTotalTable[monthYearKey] += command.montant_total;
+                    } else {
+                        monthTotalTable[monthYearKey] = command.montant_total;
+                    }
+
+                    commandListElement.appendChild(li);
                 }
 
-                commandListElement.appendChild(li);
-            }
-
-            // const totalLi = document.createElement('li');
-            // totalLi.textContent = `Montant Total: ${totalMontantTotal} €`;
-            // commandListElement.appendChild(totalLi);
-            displayMonthTotalTable(monthTotalTable);
+                // const totalLi = document.createElement('li');
+                // totalLi.textContent = `Montant Total: ${totalMontantTotal} €`;
+                // commandListElement.appendChild(totalLi);
+                displayMonthTotalTable(monthTotalTable);
+            }).catch(error => {
+            alert("vous devez etre connecter en tant qu'admin ou comptable pour voir cette page");
+            window.location.href = 'index.html';
         });
+
+    }catch (error) {
+        // Gérer l'erreur ici
+        console.error(error.message);
+        // Afficher un message d'erreur à l'utilisateur
+        alert(error.message);
+        // Rediriger l'utilisateur vers la page de connexion par exemple
+        window.location.href = 'login.html';
+    }
 });
 
 function formatDate(date) {

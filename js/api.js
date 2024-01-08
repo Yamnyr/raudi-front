@@ -123,6 +123,9 @@ function createCommand(data) {
     })
         .then(response => {
             if (response.ok) {
+                console.log('Modèle commendé avec succès !');
+                alert('Modèle commendé avec succès !');
+                window.location.href = `index.html`;
                 return response.json();
             } else {
                 throw new Error('Erreur lors de la création de la commande');
@@ -154,7 +157,10 @@ export async function addModel(modelData) {
 
     if (response.ok) {
         console.log('Modèle ajouté avec succès !');
+        window.location.href = `index.html`;
     } else {
+        alert('Vous devez être connecté en tant qu\'admin pour ajouter un modèle');
+        window.location.href = 'login.html';
         throw new Error('Erreur lors de l\'ajout du modèle');
     }
 }
