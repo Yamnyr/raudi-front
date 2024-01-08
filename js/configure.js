@@ -142,20 +142,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
-    configureForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        // Récupère l'ID de l'utilisateur (à remplacer par la vraie logique)
-        const userId = '02f785fb-bc01-41c1-975f-b828da5e4f05';
-
-        // Appelle la fonction pour créer une commande via l'API
-        createCommand({
-            montant_total: montantTotal,
-            liste_options: listeOptions,
-            id_utilisateur: userId,
-            id_modele: modelId,
-        });
-    });
+    // configureForm.addEventListener('submit', (event) => {
+    //     event.preventDefault();
+    //
+    //     // Récupère l'ID de l'utilisateur (à remplacer par la vraie logique)
+    //     const userId = '02f785fb-bc01-41c1-975f-b828da5e4f05';
+    //
+    //     // Appelle la fonction pour créer une commande via l'API
+    //     createCommand({
+    //         montant_total: montantTotal,
+    //         liste_options: listeOptions,
+    //         id_utilisateur: userId,
+    //         id_modele: modelId,
+    //     });
+    // });
     function updateMontantTotalInput() {
         montantTotalInput.value = montantTotal;
     }

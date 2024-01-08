@@ -160,7 +160,7 @@ export async function addModel(modelData) {
         window.location.href = `index.html`;
     } else {
         alert('Vous devez être connecté en tant qu\'admin pour ajouter un modèle');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
         throw new Error('Erreur lors de l\'ajout du modèle');
     }
 }
@@ -181,6 +181,25 @@ function getModelImageById(modelId) {
         });
 }
 
+export async function addOption(optionData) {
+    const response = await fetch('http://localhost:8000/option/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token,
+        },
+        body: JSON.stringify(optionData),
+    });
+
+    if (response.ok) {
+        console.log('Option ajoutée avec succès !');
+        alert('Option ajouté avec succès');
+        window.location.href = `index.html`;
+    } else {
+        throw new Error('Erreur lors de l\'ajout de l\'option');
+    }
+}
+
 export { getModelImageById };
 
 export { createCommand }
@@ -189,18 +208,10 @@ export { registerUser };
 
 export { loginUser };
 
-// Exporte la fonction pour l'utiliser dans d'autres fichiers
 export { getAllModels };
 
-// Exporte la fonction pour l'utiliser dans d'autres fichiers
 export { getOneModelById };
 
-// Exporte la fonction pour l'utiliser dans d'autres fichiers
 export { getOptionsByModelId };
 
-// Exporte la fonction pour l'utiliser dans d'autres fichiers
 export { getAllCommands };
-
-
-// http://localhost:8000/option/getall/:id
-// http://localhost:8000/modele/add/
